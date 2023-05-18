@@ -14,7 +14,7 @@ const baiJamjuree = BaiJamjuree({
 })
 
 export const metadata = {
-  title: 'NLW Spacetimwe',
+  title: 'NLW Spacetime',
   description:
     'Uma cápsula do tempo construída com React, Next.js, TailwindCSS e TypeScript',
 }
