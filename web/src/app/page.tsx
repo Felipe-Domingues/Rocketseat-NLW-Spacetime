@@ -6,6 +6,7 @@ import ptBr from 'dayjs/locale/pt-br'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import mime from 'mime'
 
 dayjs.locale(ptBr)
 
@@ -40,18 +41,35 @@ export default async function Home() {
   return (
     <div className="flex flex-col gap-10 p-8">
       {memories.map((memory) => {
+        let mimeType = mime.getType(memory.coverUrl)
+        !mimeType && (mimeType = '')
+        const mimeTypeImageRegex = /^(image)\/[a-zA-Z]+/
+        const mimeTypeVideoRegex = /^(video)\/[a-zA-Z]+/
         return (
           <div key={memory.id} className="space-y-4">
             <time className="-ml-8 flex items-center gap-2 text-sm text-gray-100 before:h-px before:w-5 before:bg-gray-50">
               {dayjs(memory.createdAt).format('D[ de ] MMMM[, ] YYYY')}
             </time>
-            <Image
-              src={memory.coverUrl}
-              alt="cover"
-              width={592}
-              height={280}
-              className="aspect-video w-full rounded-lg object-cover"
-            />
+            {mimeTypeImageRegex.test(mimeType) && (
+              <Image
+                src={memory.coverUrl}
+                alt="cover"
+                width={592}
+                height={280}
+                className="aspect-video w-full rounded-lg object-cover"
+              />
+            )}
+
+            {mimeTypeVideoRegex.test(mimeType) && (
+              <video
+                src={memory.coverUrl}
+                width={592}
+                height={280}
+                controls={true}
+                className="aspect-video w-full rounded-lg object-cover"
+              />
+            )}
+
             <p className="text-lg leading-relaxed text-gray-200">
               {memory.excerpt}
             </p>
