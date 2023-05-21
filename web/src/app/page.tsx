@@ -67,6 +67,8 @@ export default async function Home() {
                 height={280}
                 controls={true}
                 className="aspect-video w-full rounded-lg object-cover"
+                autoPlay={true}
+                muted={true}
               />
             )}
 

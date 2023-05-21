@@ -40,7 +40,6 @@ export default function NewMemory() {
 
       if (result.assets[0]) {
         // Verifica se é maior que 20mb
-        console.log(result.assets[0].fileSize)
         if (result.assets[0].fileSize > 20_971_520) {
           setTextErrorFileSize('flex')
 
