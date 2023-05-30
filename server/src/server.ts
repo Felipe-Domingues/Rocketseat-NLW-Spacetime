@@ -36,5 +36,7 @@ app
     host: '0.0.0.0',
   })
   .then(() => {
-    console.log('🚀 HTTP server running on http://localhost:3333')
+    console.log(
+      '🚀 HTTP server running on https://rocketseat-nlw-spacetime-otmd.vercel.app/',
+    )
   })
