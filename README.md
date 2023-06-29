@@ -41,7 +41,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 A cápsula do tempo é sistema para gravar momentos importantes e compartilhá-los com quem ama ❤️.
 
-- [Acesse o projeto finalizado, online](https://rocketseat-nlw-spacetime.vercel.app/)
+- [Acesse o projeto finalizado, online](https://rocketseat-nlw-spacetime-felipe-domingues.vercel.app/)
 
 ## :memo: Licença
 
